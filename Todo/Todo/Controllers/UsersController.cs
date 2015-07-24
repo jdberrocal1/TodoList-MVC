@@ -17,7 +17,17 @@ namespace Todo.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            List<UserDTO> Users = new List<UserDTO>();
+
+            foreach (User user in db.Users.ToList())
+            {
+                UserDTO userDTO = new UserDTO();
+                userDTO.UserId = user.UserId;
+                userDTO.UserName = user.UserName;
+                userDTO.UserEmail = user.UserEmail;
+                Users.Add(userDTO);
+            }
+            return View(Users);
         }
 
         // GET: Users/Details/5
