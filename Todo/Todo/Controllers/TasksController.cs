@@ -17,9 +17,22 @@ namespace Todo.Controllers
         // GET: Tasks
         public ActionResult Index()
         {
-            var tasks = db.Tasks.Include(t => t.User);
             
-            return View(tasks.ToList());
+            List<TaskDTO> Tasks = new List<TaskDTO>();
+            var tasks = db.Tasks.Include(t => t.User);
+
+            foreach (Task task in tasks.ToList())
+            {
+                TaskDTO taskDTO = new TaskDTO();
+                taskDTO.TodoId = task.TodoId;
+                taskDTO.Date = task.Date;
+                taskDTO.Description = task.Description;
+                taskDTO.UserId = task.UserId;
+                taskDTO.User = task.User;
+
+                Tasks.Add(taskDTO);
+            }
+            return View(Tasks);
         }
 
         // GET: Tasks/Details/5
@@ -34,7 +47,15 @@ namespace Todo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(task);
+
+            TaskDTO taskDTO = new TaskDTO();
+            taskDTO.TodoId = task.TodoId;
+            taskDTO.Date = task.Date;
+            taskDTO.Description = task.Description;
+            taskDTO.UserId = task.UserId;
+            taskDTO.User = task.User;
+
+            return View(taskDTO);
         }
 
         // GET: Tasks/Create
@@ -75,7 +96,15 @@ namespace Todo.Controllers
                 return HttpNotFound();
             }
             ViewBag.UserId = new SelectList(db.Users, "UserId", "UserName", task.UserId);
-            return View(task);
+
+            TaskDTO taskDTO = new TaskDTO();
+            taskDTO.TodoId = task.TodoId;
+            taskDTO.Date = task.Date;
+            taskDTO.Description = task.Description;
+            taskDTO.UserId = task.UserId;
+            taskDTO.User = task.User;
+
+            return View(taskDTO);
         }
 
         // POST: Tasks/Edit/5
@@ -107,7 +136,15 @@ namespace Todo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(task);
+
+            TaskDTO taskDTO = new TaskDTO();
+            taskDTO.TodoId = task.TodoId;
+            taskDTO.Date = task.Date;
+            taskDTO.Description = task.Description;
+            taskDTO.UserId = task.UserId;
+            taskDTO.User = task.User;
+
+            return View(taskDTO);
         }
 
         // POST: Tasks/Delete/5

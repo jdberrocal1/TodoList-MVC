@@ -42,7 +42,12 @@ namespace Todo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(user);
+            UserDTO userDTO = new UserDTO();
+            userDTO.UserId = user.UserId;
+            userDTO.UserName = user.UserName;
+            userDTO.UserEmail = user.UserEmail;
+            
+            return View(userDTO);
         }
 
         // GET: Users/Create
@@ -80,7 +85,14 @@ namespace Todo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(user);
+
+            UserDTO userDTO = new UserDTO();
+            userDTO.UserId = user.UserId;
+            userDTO.UserName = user.UserName;
+            userDTO.UserEmail = user.UserEmail;
+            
+
+            return View(userDTO);
         }
 
         // POST: Users/Edit/5
@@ -111,7 +123,13 @@ namespace Todo.Controllers
             {
                 return HttpNotFound();
             }
-            return View(user);
+            UserDTO userDTO = new UserDTO();
+            userDTO.UserId = user.UserId;
+            userDTO.UserName = user.UserName;
+            userDTO.UserEmail = user.UserEmail;
+
+
+            return View(userDTO);
         }
 
         // POST: Users/Delete/5
