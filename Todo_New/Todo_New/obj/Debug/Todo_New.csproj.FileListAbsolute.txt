@@ -1,0 +1,30 @@
+D:\Training ASP.NET\Todo_New\Todo_New\bin\Todo_New.dll.config
+D:\Training ASP.NET\Todo_New\Todo_New\bin\Todo_New.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\Todo_New.pdb
+D:\Training ASP.NET\Todo_New\Todo_New\bin\Data Access.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\EntityFramework.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\EntityFramework.SqlServer.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\Repositories.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Helpers.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Mvc.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Razor.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Webpages.Deployment.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Webpages.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Webpages.Razor.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\Data Access.pdb
+D:\Training ASP.NET\Todo_New\Todo_New\bin\Repositories.pdb
+D:\Training ASP.NET\Todo_New\Todo_New\bin\EntityFramework.xml
+D:\Training ASP.NET\Todo_New\Todo_New\bin\EntityFramework.SqlServer.xml
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Razor.xml
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Webpages.xml
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Webpages.Deployment.xml
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Webpages.Razor.xml
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Helpers.xml
+D:\Training ASP.NET\Todo_New\Todo_New\bin\System.Web.Mvc.xml
+D:\Training ASP.NET\Todo_New\Todo_New\obj\Debug\Todo_New.csprojResolveAssemblyReference.cache
+D:\Training ASP.NET\Todo_New\Todo_New\obj\Debug\Todo_New.dll
+D:\Training ASP.NET\Todo_New\Todo_New\obj\Debug\Todo_New.pdb
+D:\Training ASP.NET\Todo_New\Todo_New\bin\AutoMapper.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\AutoMapper.pdb
+D:\Training ASP.NET\Todo_New\Todo_New\bin\AutoMapper.xml
+D:\Training ASP.NET\Todo_New\Todo_New\bin\AutoMapper.Net4.dll
