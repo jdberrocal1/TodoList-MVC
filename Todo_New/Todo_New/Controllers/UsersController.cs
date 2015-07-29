@@ -61,12 +61,6 @@ namespace Todo_New.Controllers
             return View(user);
         }
 
-
-        /*
-       
-
-        
-
         // GET: Users/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -74,7 +68,7 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            UserDTO user = userRepo.getUserID(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -87,16 +81,16 @@ namespace Todo_New.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserId,UserName,UserEmail")] User user)
+        public ActionResult Edit([Bind(Include = "UserId,UserName,UserEmail")] UserDTO user)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
-                db.SaveChanges();
+                userRepo.editUser(user);
                 return RedirectToAction("Index");
             }
             return View(user);
         }
+
 
         // GET: Users/Delete/5
         public ActionResult Delete(int? id)
@@ -105,7 +99,7 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
+            UserDTO user = userRepo.getUserID(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -118,21 +112,18 @@ namespace Todo_New.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
-            db.SaveChanges();
+            userRepo.deleteUser(id);
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                db.Dispose();
+                userRepo.Dispose();
             }
             base.Dispose(disposing);
         }
-         * 
-         * */
     }
 }

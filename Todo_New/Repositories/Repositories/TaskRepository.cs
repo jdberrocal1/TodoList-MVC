@@ -5,13 +5,23 @@ using System.Web;
 using Data_Access.Data;
 using Repositories.DTOS;
 using AutoMapper;
+using System.Data.Entity;
 
 namespace Repositories.Repositories
 {
     public class TaskRepository
     {
         private TodoList db = new TodoList();
-        
+               
+        public TaskDTO TaskToTaskDTO(Task task)
+        {
+            return Mapper.Map<TaskDTO>(task);
+        }
+
+        public Task taskDTOToTask(TaskDTO taskDTO)
+        {
+            return Mapper.Map<Task>(taskDTO);
+        }
 
         public List<TaskDTO> getAll()
         {
@@ -19,30 +29,40 @@ namespace Repositories.Repositories
 
             foreach (Task task in db.Tasks.ToList())
             {
-                TaskDTO dto = Mapper.Map<TaskDTO>(task);
-                tasks.Add(dto);
+                tasks.Add(TaskToTaskDTO(task));
             }
             
             return tasks;
         }
 
+        public TaskDTO getTaskID(int? id)
+        {
+            TaskDTO task = TaskToTaskDTO( db.Tasks.Find(id));
+
+            return task;
+        }
+
         public void Create(TaskDTO taskDTO)
         {
-            /*var userDTO = taskDTO.User;
-            taskDTO.User = Mapper.Map<UserDTO>(userDTO);
-            Task task = Mapper.Map<Task>(taskDTO);*/
-            /*User user = new User();
-            user.UserEmail = taskDTO.User.UserEmail;
-            user.UserId = taskDTO.User.UserId;
-            user.UserName = taskDTO.User.UserName;
-            */
-            Task task = new Task();
-            task.User = null;
-            task.Date = taskDTO.Date;
-            task.Description = taskDTO.Description;
-            
+            User user = db.Users.Find(taskDTO.User.UserId);
+            Task task = taskDTOToTask(taskDTO);
+            task.User = user;           
 
             db.Tasks.Add(task);
+            db.SaveChanges();
+        }
+
+
+        public void editTask(TaskDTO taskDTO)
+        {
+            db.Entry(taskDTOToTask(taskDTO)).State = EntityState.Modified;
+            db.SaveChanges();
+        }
+
+        public void deleteTask(int? id)
+        {
+            Task task = db.Tasks.Find(id);
+            db.Tasks.Remove(task);
             db.SaveChanges();
         }
     }

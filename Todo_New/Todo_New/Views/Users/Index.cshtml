@@ -12,10 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserName)
+            Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserEmail)
+            Email
+        </th>
+        <th>
+            Tasks
         </th>
         <th></th>
     </tr>
@@ -27,6 +30,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.UserEmail)
+        </td>
+        <td>
+           @Html.DisplayFor(modelItem => item.Tasks.Count)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |

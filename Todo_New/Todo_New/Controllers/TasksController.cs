@@ -16,16 +16,20 @@ namespace Todo_New.Controllers
     {
 
         TaskRepository taskRepo = new TaskRepository();
+        UserRepository userRepo = new UserRepository();
 
         // GET: Tasks
         public ActionResult Index()
         {
+             
             return View(taskRepo.getAll());
         }
 
         // GET: Tasks/Create
         public ActionResult Create()
         {
+            var users = userRepo.getAll();
+            ViewData["UserList"] = new SelectList(users, "UserId", "UserName");
             return View();
         }
 
@@ -34,11 +38,10 @@ namespace Todo_New.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TodoId,Description,Date")] TaskDTO task)
+        public ActionResult Create([Bind(Include = "TodoId,Description,Date,User")] TaskDTO task)
         {
             if (ModelState.IsValid)
             {
-
                 taskRepo.Create(task);
                 return RedirectToAction("Index");
             }
@@ -46,9 +49,6 @@ namespace Todo_New.Controllers
             return View(task);
         }
 
-
-
-/*
         // GET: Tasks/Details/5
         public ActionResult Details(int? id)
         {
@@ -56,17 +56,13 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task task = db.Tasks.Find(id);
+            TaskDTO task = taskRepo.getTaskID(id);
             if (task == null)
             {
                 return HttpNotFound();
             }
             return View(task);
         }
-
-        
-
-        
 
         // GET: Tasks/Edit/5
         public ActionResult Edit(int? id)
@@ -75,7 +71,9 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task task = db.Tasks.Find(id);
+            TaskDTO task = taskRepo.getTaskID(id);
+            var users = userRepo.getAll();
+            ViewData["UserList"] = new SelectList(users, "UserId", "UserName");
             if (task == null)
             {
                 return HttpNotFound();
@@ -88,16 +86,16 @@ namespace Todo_New.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TodoId,Description,Date")] Task task)
+        public ActionResult Edit([Bind(Include = "TodoId,Description,Date")] TaskDTO taskDTO)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(task).State = EntityState.Modified;
-                db.SaveChanges();
+                taskRepo.editTask(taskDTO);
                 return RedirectToAction("Index");
             }
-            return View(task);
+            return View(taskDTO);
         }
+
 
         // GET: Tasks/Delete/5
         public ActionResult Delete(int? id)
@@ -106,7 +104,7 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Task task = db.Tasks.Find(id);
+            TaskDTO task = taskRepo.getTaskID(id);
             if (task == null)
             {
                 return HttpNotFound();
@@ -119,20 +117,10 @@ namespace Todo_New.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Task task = db.Tasks.Find(id);
-            db.Tasks.Remove(task);
-            db.SaveChanges();
+            taskRepo.deleteTask(id);
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
- * */
+
     }
 }

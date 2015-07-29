@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AutoMapper;
+using Data_Access.Data;
+using Repositories.DTOS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +14,12 @@ namespace Todo_New
     {
         protected void Application_Start()
         {
+            Object mapperTaskToTaskDTO = Mapper.CreateMap<Task, TaskDTO>();
+            Object mapperTaskDTOToTask = Mapper.CreateMap<TaskDTO, Task>();
+            Object mapperUserToUserDTO = Mapper.CreateMap<User, UserDTO>();
+            Object mapperUserDTOToUser = Mapper.CreateMap<UserDTO, User>();
+            Mapper.AssertConfigurationIsValid();
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

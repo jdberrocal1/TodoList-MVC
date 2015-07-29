@@ -28,3 +28,4 @@ D:\Training ASP.NET\Todo_New\Todo_New\bin\AutoMapper.dll
 D:\Training ASP.NET\Todo_New\Todo_New\bin\AutoMapper.pdb
 D:\Training ASP.NET\Todo_New\Todo_New\bin\AutoMapper.xml
 D:\Training ASP.NET\Todo_New\Todo_New\bin\AutoMapper.Net4.dll
+D:\Training ASP.NET\Todo_New\Todo_New\bin\AutoMapper.Net4.pdb
