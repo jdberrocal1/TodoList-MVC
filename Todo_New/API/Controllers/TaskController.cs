@@ -19,25 +19,28 @@ namespace API.Controllers
 
         TaskRepository taskRepo = new TaskRepository();
 
-
         // GET: api/Task
-        public List<TaskDTO> GetTasks()
+        [HttpGet]
+        public IEnumerable<TaskDTO> GetTasks()
         {
-            return taskRepo.GetAll();
+
+            return taskRepo.GetAll().AsEnumerable();
         }
 
 
+
         // GET: api/Task/5
+        [HttpGet]
         [ResponseType(typeof(TaskDTO))]
-        public IHttpActionResult GetTask(int id)
+        public TaskDTO GetTask(int id)
         {
             TaskDTO task = taskRepo.GetTaskID(id);
             if (task == null)
             {
-                return NotFound();
+                return null;
             }
 
-            return Ok(task);
+            return task;
         }
 
 

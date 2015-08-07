@@ -1,4 +1,5 @@
 ﻿angular.module("Todo", ['ngRoute'])
+
 	/*.config(function ($routeProvider, $compileProvider) {
 	    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|itms-services):/);
 	    $routeProvider
