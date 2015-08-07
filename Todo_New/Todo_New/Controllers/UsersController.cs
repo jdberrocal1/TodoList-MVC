@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Data_Access.Data;
 using Repositories.Repositories;
-using Repositories.DTOS;
+using DTOS.DTOS;
+
 
 namespace Todo_New.Controllers
 {
@@ -20,7 +20,7 @@ namespace Todo_New.Controllers
         // GET: Users
         public ActionResult Index()
         {
-            return View(userRepo.getAll());
+            return View(userRepo.GetAll());
         }
 
 
@@ -53,7 +53,7 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserDTO user = userRepo.getUserID(id);
+            UserDTO user = userRepo.GetUserID(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -68,7 +68,7 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserDTO user = userRepo.getUserID(id);
+            UserDTO user = userRepo.GetUserID(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -85,7 +85,7 @@ namespace Todo_New.Controllers
         {
             if (ModelState.IsValid)
             {
-                userRepo.editUser(user);
+                userRepo.EditUser(user);
                 return RedirectToAction("Index");
             }
             return View(user);
@@ -99,7 +99,7 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserDTO user = userRepo.getUserID(id);
+            UserDTO user = userRepo.GetUserID(id);
             if (user == null)
             {
                 return HttpNotFound();
@@ -112,7 +112,7 @@ namespace Todo_New.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            userRepo.deleteUser(id);
+            userRepo.DeleteUser(id);
             return RedirectToAction("Index");
         }
 

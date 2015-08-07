@@ -11,6 +11,9 @@ namespace Todo_New
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            //Quitar esta linea y el conectionString cuando el sitio consuma el Api
+            Utilities.MapperHelper.MappingInit();
+            
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(

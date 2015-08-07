@@ -1,4 +1,4 @@
-﻿@model Repositories.DTOS.TaskDTO
+﻿@model DTOS.DTOS.TaskDTO
 
 @{
     ViewBag.Title = "Details";
@@ -23,8 +23,16 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Date)
+            @Html.DisplayFor(model => model.Date.Day)/@Html.DisplayFor(model => model.Date.Month)/@Html.DisplayFor(model => model.Date.Year)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.UserName)
+        </dd>
+
 
     </dl>
 </div>

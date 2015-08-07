@@ -1,17 +1,26 @@
 D:\Training ASP.NET\Todo_New\Repositories\bin\Repositories.dll.config
 D:\Training ASP.NET\Todo_New\Repositories\bin\Repositories.dll
 D:\Training ASP.NET\Todo_New\Repositories\bin\Repositories.pdb
-D:\Training ASP.NET\Todo_New\Repositories\obj\Debug\Repositories.dll
-D:\Training ASP.NET\Todo_New\Repositories\obj\Debug\Repositories.pdb
-D:\Training ASP.NET\Todo_New\Repositories\obj\Debug\Repositories.csprojResolveAssemblyReference.cache
-D:\Training ASP.NET\Todo_New\Repositories\bin\AutoMapper.Net4.dll
-D:\Training ASP.NET\Todo_New\Repositories\bin\AutoMapper.dll
 D:\Training ASP.NET\Todo_New\Repositories\bin\Data Access.dll
+D:\Training ASP.NET\Todo_New\Repositories\bin\DTOS.dll
 D:\Training ASP.NET\Todo_New\Repositories\bin\EntityFramework.dll
 D:\Training ASP.NET\Todo_New\Repositories\bin\EntityFramework.SqlServer.dll
+D:\Training ASP.NET\Todo_New\Repositories\bin\Newtonsoft.Json.dll
+D:\Training ASP.NET\Todo_New\Repositories\bin\System.Net.Http.Formatting.dll
+D:\Training ASP.NET\Todo_New\Repositories\bin\System.Web.Http.dll
+D:\Training ASP.NET\Todo_New\Repositories\bin\System.Web.Http.WebHost.dll
+D:\Training ASP.NET\Todo_New\Repositories\bin\Utilities.dll
+D:\Training ASP.NET\Todo_New\Repositories\bin\AutoMapper.dll
 D:\Training ASP.NET\Todo_New\Repositories\bin\Data Access.pdb
-D:\Training ASP.NET\Todo_New\Repositories\bin\AutoMapper.pdb
-D:\Training ASP.NET\Todo_New\Repositories\bin\AutoMapper.xml
-D:\Training ASP.NET\Todo_New\Repositories\bin\AutoMapper.Net4.pdb
+D:\Training ASP.NET\Todo_New\Repositories\bin\DTOS.pdb
+D:\Training ASP.NET\Todo_New\Repositories\bin\Utilities.pdb
 D:\Training ASP.NET\Todo_New\Repositories\bin\EntityFramework.xml
 D:\Training ASP.NET\Todo_New\Repositories\bin\EntityFramework.SqlServer.xml
+D:\Training ASP.NET\Todo_New\Repositories\bin\Newtonsoft.Json.xml
+D:\Training ASP.NET\Todo_New\Repositories\bin\System.Net.Http.Formatting.xml
+D:\Training ASP.NET\Todo_New\Repositories\bin\System.Web.Http.xml
+D:\Training ASP.NET\Todo_New\Repositories\bin\System.Web.Http.WebHost.xml
+D:\Training ASP.NET\Todo_New\Repositories\bin\AutoMapper.xml
+D:\Training ASP.NET\Todo_New\Repositories\obj\Debug\Repositories.csprojResolveAssemblyReference.cache
+D:\Training ASP.NET\Todo_New\Repositories\obj\Debug\Repositories.dll
+D:\Training ASP.NET\Todo_New\Repositories\obj\Debug\Repositories.pdb

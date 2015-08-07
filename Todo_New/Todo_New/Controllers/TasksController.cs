@@ -8,7 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Data_Access.Data;
 using Repositories.Repositories;
-using Repositories.DTOS;
+using DTOS.DTOS;
+
 
 namespace Todo_New.Controllers
 {
@@ -22,13 +23,13 @@ namespace Todo_New.Controllers
         public ActionResult Index()
         {
              
-            return View(taskRepo.getAll());
+            return View(taskRepo.GetAll());
         }
 
         // GET: Tasks/Create
         public ActionResult Create()
         {
-            var users = userRepo.getAll();
+            var users = userRepo.GetAll();
             ViewData["UserList"] = new SelectList(users, "UserId", "UserName");
             return View();
         }
@@ -56,7 +57,8 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaskDTO task = taskRepo.getTaskID(id);
+            TaskDTO task = taskRepo.GetTaskID(id);
+            
             if (task == null)
             {
                 return HttpNotFound();
@@ -71,8 +73,8 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaskDTO task = taskRepo.getTaskID(id);
-            var users = userRepo.getAll();
+            TaskDTO task = taskRepo.GetTaskID(id);
+            var users = userRepo.GetAll();
             ViewData["UserList"] = new SelectList(users, "UserId", "UserName");
             if (task == null)
             {
@@ -86,11 +88,11 @@ namespace Todo_New.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TodoId,Description,Date")] TaskDTO taskDTO)
+        public ActionResult Edit([Bind(Include = "TodoId,Description,Date,User")] TaskDTO taskDTO)
         {
             if (ModelState.IsValid)
             {
-                taskRepo.editTask(taskDTO);
+                taskRepo.EditTask(taskDTO);
                 return RedirectToAction("Index");
             }
             return View(taskDTO);
@@ -104,7 +106,7 @@ namespace Todo_New.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TaskDTO task = taskRepo.getTaskID(id);
+            TaskDTO task = taskRepo.GetTaskID(id);
             if (task == null)
             {
                 return HttpNotFound();
@@ -117,7 +119,7 @@ namespace Todo_New.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            taskRepo.deleteTask(id);
+            taskRepo.DeleteTask(id);
             return RedirectToAction("Index");
         }
 

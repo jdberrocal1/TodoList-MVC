@@ -1,0 +1,14 @@
+D:\Training ASP.NET\Todo_New\Utilities\bin\Utilities.dll.config
+D:\Training ASP.NET\Todo_New\Utilities\bin\Utilities.dll
+D:\Training ASP.NET\Todo_New\Utilities\bin\Utilities.pdb
+D:\Training ASP.NET\Todo_New\Utilities\bin\AutoMapper.dll
+D:\Training ASP.NET\Todo_New\Utilities\bin\Data Access.dll
+D:\Training ASP.NET\Todo_New\Utilities\bin\DTOS.dll
+D:\Training ASP.NET\Todo_New\Utilities\bin\EntityFramework.dll
+D:\Training ASP.NET\Todo_New\Utilities\bin\Data Access.pdb
+D:\Training ASP.NET\Todo_New\Utilities\bin\DTOS.pdb
+D:\Training ASP.NET\Todo_New\Utilities\bin\AutoMapper.xml
+D:\Training ASP.NET\Todo_New\Utilities\bin\EntityFramework.xml
+D:\Training ASP.NET\Todo_New\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+D:\Training ASP.NET\Todo_New\Utilities\obj\Debug\Utilities.dll
+D:\Training ASP.NET\Todo_New\Utilities\obj\Debug\Utilities.pdb

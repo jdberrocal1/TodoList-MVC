@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Repositories.DTOS.TaskDTO>
+﻿@model IEnumerable<DTOS.DTOS.TaskDTO>
 
 @{
     ViewBag.Title = "Index";
@@ -9,6 +9,9 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<div ng-controller="TaskController">
+    {{tasks}}
+</div>
 <table class="table">
     <tr>
         <th>
@@ -29,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Date)
+            @Html.DisplayFor(modelItem => item.Date.Day)/@Html.DisplayFor(modelItem => item.Date.Month)/@Html.DisplayFor(modelItem => item.Date.Year)
         </td>
         <td>
             @Html.ActionLink(item.User.UserName, "Details", "Users", new { id = item.User.UserId }, new { })

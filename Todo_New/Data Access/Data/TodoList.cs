@@ -12,6 +12,7 @@ namespace Data_Access.Data
         public TodoList()
             : base("name=DbConnectionString")
         {
+            this.Database.Log = s => System.Diagnostics.Debug.WriteLine(s);
         }
 
         public DbSet<User> Users { get; set; }
@@ -19,15 +20,15 @@ namespace Data_Access.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>().HasKey(p => p.UserId);
-            modelBuilder.Entity<User>().Property(c => c.UserId)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            modelBuilder.Entity<Task>().HasKey(b => b.TodoId);
-            modelBuilder.Entity<Task>().Property(b => b.TodoId)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<User>().HasKey(u => u.UserId);
+            modelBuilder.Entity<User>().Property(u => u.UserId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<Task>().HasKey(t => t.TodoId);
+            modelBuilder.Entity<Task>().Property(t => t.TodoId).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-           // modelBuilder.Entity<Task>().HasRequired(p => p.User)
-             //   .WithMany(b => b.Tasks).HasForeignKey(b => b.UserId);
+            //modelBuilder.Entity<Task>().HasRequired(t => t.User).WithMany(u => u.Tasks).HasForeignKey(t => t.User);
+            
+            
+           
 
 
             base.OnModelCreating(modelBuilder);

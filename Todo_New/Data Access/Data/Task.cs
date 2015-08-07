@@ -18,8 +18,7 @@ namespace Data_Access.Data
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
-        //[Required]
-        //public int UserId { get; set; }
+        public int UserId { get; set; }
         public virtual User User { get; set; }
     }
 }

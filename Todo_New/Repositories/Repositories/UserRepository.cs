@@ -1,62 +1,53 @@
-﻿using AutoMapper;
-using Data_Access.Data;
-using Repositories.DTOS;
+﻿using Data_Access.Data;
+using DTOS.DTOS;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using Utilities;
 
 namespace Repositories.Repositories
 {
     public class UserRepository
     {
         private TodoList db = new TodoList();
-        
-        public UserDTO userToUserDTO(User user)
-        {
-            return Mapper.Map<UserDTO>(user);
-        }
+        private MapperHelper mapper = new MapperHelper(); 
 
-        public User userDTOToUser(UserDTO userDTO)
-        {
-            return Mapper.Map<User>(userDTO);
-        }
-
-        public List<UserDTO> getAll()
+        public List<UserDTO> GetAll()
         {
             var users = new List<UserDTO>();
             foreach (User user in db.Users.ToList())
             {
-                UserDTO dto = userToUserDTO(user);
+                UserDTO dto = mapper.userToUserDTO(user);
                 users.Add(dto);
             }
             return users;
         }
 
-        public UserDTO getUserID(int? id)
+        public UserDTO GetUserID(int? id)
         {
             User user = db.Users.Find(id);
-            return userToUserDTO(user);
+            return mapper.userToUserDTO(user);
         }
 
 
         public void Create(UserDTO userDTO)
         {
-            db.Users.Add(userDTOToUser(userDTO));
+            db.Users.Add(mapper.userDTOToUser(userDTO));
             db.SaveChanges();
         }
 
         
 
-        public void editUser(UserDTO userDTO)
+        public void EditUser(UserDTO userDTO)
         {
-            db.Entry(userDTOToUser(userDTO)).State = EntityState.Modified;
+            db.Entry(mapper.userDTOToUser(userDTO)).State = EntityState.Modified;
             db.SaveChanges();
 
         }
 
-        public void deleteUser(int? id)
+        public void DeleteUser(int? id)
         {
             
             foreach (Task task in db.Tasks.ToList())

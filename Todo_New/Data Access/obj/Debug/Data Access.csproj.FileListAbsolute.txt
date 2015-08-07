@@ -1,10 +1,18 @@
-D:\Training ASP.NET\Todo_New\Data Access\obj\Debug\Data Access.csprojResolveAssemblyReference.cache
 D:\Training ASP.NET\Todo_New\Data Access\bin\Data Access.dll.config
 D:\Training ASP.NET\Todo_New\Data Access\bin\Data Access.dll
 D:\Training ASP.NET\Todo_New\Data Access\bin\Data Access.pdb
 D:\Training ASP.NET\Todo_New\Data Access\bin\EntityFramework.dll
 D:\Training ASP.NET\Todo_New\Data Access\bin\EntityFramework.SqlServer.dll
+D:\Training ASP.NET\Todo_New\Data Access\bin\Newtonsoft.Json.dll
+D:\Training ASP.NET\Todo_New\Data Access\bin\System.Net.Http.Formatting.dll
+D:\Training ASP.NET\Todo_New\Data Access\bin\System.Web.Http.dll
+D:\Training ASP.NET\Todo_New\Data Access\bin\System.Web.Http.WebHost.dll
 D:\Training ASP.NET\Todo_New\Data Access\bin\EntityFramework.xml
 D:\Training ASP.NET\Todo_New\Data Access\bin\EntityFramework.SqlServer.xml
+D:\Training ASP.NET\Todo_New\Data Access\bin\Newtonsoft.Json.xml
+D:\Training ASP.NET\Todo_New\Data Access\bin\System.Net.Http.Formatting.xml
+D:\Training ASP.NET\Todo_New\Data Access\bin\System.Web.Http.xml
+D:\Training ASP.NET\Todo_New\Data Access\bin\System.Web.Http.WebHost.xml
+D:\Training ASP.NET\Todo_New\Data Access\obj\Debug\Data Access.csprojResolveAssemblyReference.cache
 D:\Training ASP.NET\Todo_New\Data Access\obj\Debug\Data Access.dll
 D:\Training ASP.NET\Todo_New\Data Access\obj\Debug\Data Access.pdb
